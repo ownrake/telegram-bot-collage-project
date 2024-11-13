@@ -4,7 +4,8 @@ import asyncio
 from aiogram import Bot, Dispatcher
 
 from config import api_token
-from app.hendlers import router
+from app.user.user_handlers import userRouter
+from app.admin.admin_handlers import adminRouter
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -14,7 +15,8 @@ dp = Dispatcher()
 
 async def main():
     await bot.delete_webhook(drop_pending_updates = True)
-    dp.include_router(router)
+    dp.include_router(userRouter)
+    dp.include_router(adminRouter)
     await dp.start_polling(bot)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------

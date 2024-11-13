@@ -1,7 +1,7 @@
-api_token = ""
+api_token = "7721828993:AAFhebE0bFpZ_4ooGjW2ZJqxzUH0Jrc09nQ"
 
-adminID = []
-moderatorID = []
+adminID = [1105281517]
+moderatorID = [1105281517]
 
 mass = []
 

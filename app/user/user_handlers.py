@@ -7,18 +7,18 @@ from aiogram.fsm.context import FSMContext
 import app.user.user_keyboards as userKB
 import config as con
 
-router = Router()
+userRouter = Router()
 
 class InputString(StatesGroup):
     string = State()
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 
-@router.message(CommandStart())
+@userRouter.message(CommandStart())
 async def start(message: Message):
     await message.answer(con.hello)
 
-@router.message(Command("help"))
+@userRouter.message(Command("help"))
 async def help(message: Message):
     await message.answer(con.help)
 

@@ -7,14 +7,14 @@ from aiogram.fsm.context import FSMContext
 import app.admin.admin_keyboards as adminKB
 import config as con
 
-router = Router()
+adminRouter = Router()
 
 class InputString(StatesGroup):
     string = State()
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 
-@router.message(Command("panel"))
+@adminRouter.message(Command("panel"))
 async def panel(message: Message):
     await message.answer(con.panel)
 
