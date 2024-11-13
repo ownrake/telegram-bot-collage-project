@@ -24,12 +24,7 @@ async def panel(message: Message):
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 
 @adminRouter.callback_query(F.data == "updSchlude")
-async def updSchlude(callback: CallbackQuery):
+async def updSchlude(callback: CallbackQuery, state: FSMContext):
     await callback.message.answer("Выберите неделю для изменения", reply_markup = adminKB.inputWeek)
-
     if F.data == "evenWeek":
-        await callback.message.answer("Func is work!")
-    elif F.data == "oddWeek":
-        pass
-    else:
-        await callback.message.answer("Ошибка выбора недели. Попробуйте заново")
+        
