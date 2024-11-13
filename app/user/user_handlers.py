@@ -4,8 +4,7 @@ from aiogram.filters import CommandStart, Command
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 
-# import app.keyboards as kb
-from app.keyboards import userKeyboards
+import app.user.user_keyboards as userKB
 import config as con
 
 router = Router()
@@ -22,9 +21,5 @@ async def start(message: Message):
 @router.message(Command("help"))
 async def help(message: Message):
     await message.answer(con.help)
-
-@router.message(Command("panel"))
-async def panel(message: Message):
-    await message.answer(con.panel)
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
