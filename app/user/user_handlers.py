@@ -22,4 +22,8 @@ async def start(message: Message):
 async def help(message: Message):
     await message.answer(con.help)
 
+@userRouter.message(Command("mass"))
+async def mass(message: Message):
+    await message.answer(con.mass)
+
 # ------------------------------------------------------------------------------------------------------------------------------------------------
