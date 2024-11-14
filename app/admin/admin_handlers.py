@@ -17,14 +17,9 @@ class InputString(StatesGroup):
 @adminRouter.message(Command("panel"))
 async def panel(message: Message):
     if message.from_user.id in con.adminID:
-        await message.answer(con.panel, reply_markup = adminKB.startPanel)
+        await message.answer(con.panel, reply_markup = "...")
     else:
         await message.answer("Не хватает прав доступа для использования данной команды")
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------
 
-@adminRouter.callback_query(F.data == "updSchlude")
-async def updSchlude(callback: CallbackQuery, state: FSMContext):
-    await callback.message.answer("Выберите неделю для изменения", reply_markup = adminKB.inputWeek)
-    if F.data == "evenWeek":
-        
